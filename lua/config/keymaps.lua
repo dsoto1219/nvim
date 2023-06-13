@@ -8,7 +8,7 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap leader key
 keymap("", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 -- Modes
 -- 	normal_mode = "n",
