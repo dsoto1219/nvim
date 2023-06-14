@@ -25,7 +25,8 @@ local plugins = {
 		-- refer to the configuration section below
 	  }
 	},
-	"lervag/vimtex"
+	"lervag/vimtex",
+	"iamcco/markdown-preview.nvim"
 }
 
 local opts = {}
