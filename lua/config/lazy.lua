@@ -11,22 +11,33 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
+local plugins = {  
 	{
 	  "folke/which-key.nvim",
 	  event = "VeryLazy",
 	  init = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 500
+	    vim.o.timeout = true
+	    vim.o.timeoutlen = 300
 	  end,
 	  opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+	    -- your configuration comes here
+	    -- or leave it empty to use the default settings
+	    -- refer to the configuration section below
 	  }
 	},
+	{
+		"dstein64/vim-startuptime",
+		-- lazy-load on a command
+		cmd = "StartupTime",
+		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
+		init = function()
+		  vim.g.startuptime_tries = 10
+		end,
+	},
+	"nvim-lua/popup.nvim",
+	"nvim-lua/plenary.nvim",
 	"lervag/vimtex",
-	"iamcco/markdown-preview.nvim"
+	"iamcco/markdown-preview.nvim",
 }
 
 local opts = {}

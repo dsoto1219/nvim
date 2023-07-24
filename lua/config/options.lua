@@ -8,7 +8,7 @@ local options = {
 	tabstop = 4,
 	cursorline = true,
 	number = true,
-	relativenumber = false,
+	relativenumber = true,
 
 	-- indentation
 	showtabline = 2,
@@ -24,11 +24,4 @@ if vim.fn.has('win32') == 1 then
   vim.o.shell = 'pwsh.exe'
 end
 
-vim.cmd([[
-	" This will enable code folding.
-	" Use the marker method of folding.
-	augroup filetype_vim
-		autocmd!
-		autocmd FileType vim, lua setlocal foldmethod=marker
-	augroup END
-]])
+vim.cmd([[colorscheme evening]])
