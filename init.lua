@@ -1,11 +1,2 @@
-vim.api.nvim_create_autocmd("User", {
-	pattern = "VeryLazy",
-	callback = function()
-		require "config.keymaps"
-		require "config.autocmds"
-	end,
-})
-
-require("config.options")
-require("config.lazy")
-
+require("config")
+require("lazy-plugins") -- can't write rqeuire("lazy") or else neovim gets confused between lazy module and lazy plugin

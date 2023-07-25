@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {  
+	-- misc plugins
 	{
 	  "folke/which-key.nvim",
 	  event = "VeryLazy",
@@ -25,6 +26,7 @@ local plugins = {
 	    -- refer to the configuration section below
 	  }
 	},
+
 	{
 		"dstein64/vim-startuptime",
 		-- lazy-load on a command
@@ -38,6 +40,13 @@ local plugins = {
 	"nvim-lua/plenary.nvim",
 	"lervag/vimtex",
 	"iamcco/markdown-preview.nvim",
+
+	-- cmp plugins
+	"hrsh7th/nvim-cmp",
+
+	-- snippets
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets"
 }
 
 local opts = {}
