@@ -13,6 +13,9 @@ local options = {
 	-- indentation
 	showtabline = 2,
 	smartindent = true,
+
+	-- misc
+	paste = true, --https://stackoverflow.com/a/13172741/18031673
 }
 
 for k,v in pairs(options) do
@@ -23,3 +26,6 @@ end
 if vim.fn.has('win32') == 1 then
   vim.o.shell = 'pwsh.exe'
 end
+
+-- colors
+vim.cmd([[highlight Pmenu ctermbg=black guibg=black]])
