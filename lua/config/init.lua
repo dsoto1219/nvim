@@ -1,9 +1,9 @@
 vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
 	callback = function()
-		require("keymaps")
-		require("autocmds")
+		require("config.keymaps")
+		require("config.autocmds")
 	end,
 })
 
-require("options") 
+require("config.options")
