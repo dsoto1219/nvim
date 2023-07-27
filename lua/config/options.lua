@@ -15,7 +15,7 @@ local options = {
 	smartindent = true,
 
 	-- misc
-	paste = true, --https://stackoverflow.com/a/13172741/18031673
+	paste = false, --https://stackoverflow.com/a/13172741/18031673
 }
 
 for k,v in pairs(options) do
@@ -28,4 +28,5 @@ if vim.fn.has('win32') == 1 then
 end
 
 -- colors
+vim.cmd([[colorscheme default]])
 vim.cmd([[highlight Pmenu ctermbg=black guibg=black]])

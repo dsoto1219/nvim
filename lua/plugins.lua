@@ -26,20 +26,24 @@ local plugins = {
 	    -- refer to the configuration section below
 	  }
 	},
-
 	{
 		"dstein64/vim-startuptime",
 		-- lazy-load on a command
 		cmd = "StartupTime",
 		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
 		init = function()
-		  vim.g.startuptime_tries = 10
+			vim.g.startuptime_tries = 10
 		end,
 	},
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"lervag/vimtex",
 	"iamcco/markdown-preview.nvim",
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
+	},
 
 	-- cmp plugins
 	"hrsh7th/nvim-cmp",
@@ -51,7 +55,12 @@ local plugins = {
 
 	-- snippets
 	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets"
+	"rafamadriz/friendly-snippets",
+
+	-- LSP
+	"neovim/nvim-lspconfig", -- enable LSP
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim"
 }
 
 local opts = {}
