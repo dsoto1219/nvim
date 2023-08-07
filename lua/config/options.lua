@@ -13,6 +13,7 @@ local options = {
 	-- indentation
 	showtabline = 2,
 	smartindent = true,
+	autoindent = true,
 
 	-- misc
 	paste = false, --https://stackoverflow.com/a/13172741/18031673
@@ -28,5 +29,9 @@ if vim.fn.has('win32') == 1 then
 end
 
 -- colors
-vim.cmd([[colorscheme default]])
+vim.cmd([[colorscheme lunaperche]])
 vim.cmd([[highlight Pmenu ctermbg=black guibg=black]])
+
+-- misc vim.cmd commands
+vim.cmd('filetype plugin indent on')
+vim.cmd('syntax enable')

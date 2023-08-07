@@ -10,7 +10,6 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap leader key
 keymap("", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
 
 -- Modes
 -- 	normal_mode = "n",
@@ -20,14 +19,15 @@ vim.g.maplocalleader = ","
 -- 	term_mode = "t",
 -- 	command_mode = "c"
 
+-- netrw browse
+keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize window with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -60,9 +60,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Terminal --
 -- open terminal in terminal mode (all modes)
 	-- below current window
-	keymap("", "<Leader>`", ":belowright split | term<CR>i", opts)
+	keymap("", "<Leader>t", ":belowright split | term<CR>i", opts)
 	-- in new tab
-	keymap("", "<Leader>~", ":tabnew term<CR>i", opts)
+	keymap("", "<Leader>T", ":tabnew term<CR>i", opts)
 
 -- mapping to go from terminal mode to terminal-normal mode
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
