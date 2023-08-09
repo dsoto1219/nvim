@@ -67,11 +67,18 @@ local plugins = {
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},     -- Required
 			{'hrsh7th/cmp-nvim-lsp'}, -- Required
+			{'hrsh7th/cmp-buffer'}, -- Optional
+			{'hrsh7th/cmp-path'}, -- Optional
+			{'hrsh7th/cmp-cmdline'}, -- Optional
+			{'hrsh7th/nvim-cmp'}, -- Optional
+
+			-- Snippets
 			{'L3MON4D3/LuaSnip'},     -- Required
+			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	},
 }
 
-local opts = {}
+local opts = {install = {colorscheme = {'solarized8'}}}
 
 require("lazy").setup(plugins, opts)
