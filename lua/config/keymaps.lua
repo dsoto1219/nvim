@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 require("which-key")
+=======
+local which_key_status_ok, whichkey = pcall(require, "which-key")
+if which_key_status_ok then
+	require("which-key")
+end
+>>>>>>> 6265402 (fixed telescope issue, new colorscheme)
 
 local opts = { noremap = true, silent = true }
 
@@ -10,6 +17,10 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap leader key
 keymap("", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
 vim.g.mapleader = " "
+<<<<<<< HEAD
+=======
+vim.g.maplocalleader = ","
+>>>>>>> 6265402 (fixed telescope issue, new colorscheme)
 
 -- Modes
 -- 	normal_mode = "n",
@@ -59,10 +70,15 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- open terminal in terminal mode (all modes)
+<<<<<<< HEAD
 	-- below current window
 	keymap("", "<Leader>t", ":belowright split | term<CR>i", opts)
 	-- in new tab
 	keymap("", "<Leader>T", ":tabnew term<CR>i", opts)
+=======
+-- below current window
+keymap("n", "<Leader>t", ":belowright split | term<CR>i", opts)
+>>>>>>> 6265402 (fixed telescope issue, new colorscheme)
 
 -- mapping to go from terminal mode to terminal-normal mode
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)

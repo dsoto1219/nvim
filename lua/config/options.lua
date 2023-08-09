@@ -28,9 +28,12 @@ if vim.fn.has('win32') == 1 then
   vim.o.shell = 'pwsh.exe'
 end
 
+<<<<<<< HEAD
 -- colors
 vim.cmd([[colorscheme lunaperche]])
 vim.cmd([[highlight Pmenu ctermbg=black guibg=black]])
+=======
+>>>>>>> 6265402 (fixed telescope issue, new colorscheme)
 
 -- misc vim.cmd commands
 vim.cmd('filetype plugin indent on')
