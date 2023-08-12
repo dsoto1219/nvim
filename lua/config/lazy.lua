@@ -20,7 +20,7 @@ local plugins = {
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 	"akinsho/bufferline.nvim",
-	"Shatur/neovim-ayu",
+	"sainnhe/everforest",
 
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{"nvim-treesitter/playground"},
