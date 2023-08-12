@@ -19,9 +19,24 @@ local plugins = {
 	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
-	"akinsho/bufferline.nvim",
-	"sainnhe/everforest",
+	"navarasu/onedark.nvim",
 
+	{"nvim-tree/nvim-web-devicons"},
+	{
+	  "nvim-tree/nvim-tree.lua",
+	  version = "*",
+	  lazy = false,
+	  dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	  },
+	  config = function()
+		vim.g.loaded_netrwPlugin = 1
+		vim.g.loaded_netrw = 1
+		require("nvim-tree").setup {}
+	  end,
+	},
+	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+	{'nvim-lualine/lualine.nvim', dependencies = {"nvim-tree/nvim-web-devicons"}},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{"nvim-treesitter/playground"},
 	{

@@ -1,5 +1,4 @@
-vim.opt.background = "dark"
-vim.g.everforest_background = 'hard'
-vim.g.everforest_better_performance = 1
-
-vim.cmd.colorscheme('everforest')
+local onedark_status_ok, _ = pcall(require, 'onedark')
+if onedark_status_ok then
+	vim.cmd.colorscheme('onedark')
+end
