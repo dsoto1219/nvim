@@ -11,15 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {  
+local plugins = {
 	-- misc plugins
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"lervag/vimtex",
-	"lifepillar/vim-solarized8",
 	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
+	"akinsho/bufferline.nvim",
 
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{"nvim-treesitter/playground"},
@@ -79,6 +79,6 @@ local plugins = {
 	},
 }
 
-local opts = {install = {colorscheme = {'solarized8'}}}
+local opts = {}
 
 require("lazy").setup(plugins, opts)

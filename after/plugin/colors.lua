@@ -1,1 +1,1 @@
-vim.cmd.colorscheme("solarized8_high")
+vim.cmd.colorscheme("habamax")

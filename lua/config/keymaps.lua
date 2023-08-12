@@ -1,8 +1,3 @@
-local which_key_status_ok, whichkey = pcall(require, "which-key")
-if which_key_status_ok then
-	require("which-key")
-end
-
 local opts = { noremap = true, silent = true }
 
 local term_opts = {silent = true}
