@@ -1,25 +1,24 @@
-local lsp = require('lsp-zero').preset({})
+require('mason').setup()
 
-lsp.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp.default_keymaps({
-	buffer = bufnr,
-	omit = {'<Tab>'},
-  })
-
-end)
-
--- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-lsp.setup()
-
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-  severity_sort = false,
-  float = true,
+require('mason-lspconfig').setup({
+	ensure_installed = {
+	  -- Replace these with whatever servers you want to install
+	  'lua_ls',
+	  'clangd',
+	}
 })
+
+local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lsp_attach = function(client, bufnr)
+-- Create your keybindings here...
+end
+
+local lspconfig = require('lspconfig')
+local get_servers = require('mason-lspconfig').get_installed_servers
+
+for _, server_name in ipairs(get_servers()) do
+lspconfig[server_name].setup({
+  on_attach = lsp_attach,
+  capabilities = lsp_capabilities,
+})
+end

@@ -66,26 +66,24 @@ local plugins = {
 		opts = {} -- this is equalent to setup({}) function
 	},
 	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+	{
+		-- LSP Support
+		{'neovim/nvim-lspconfig'},             -- Required
+		{'williamboman/mason.nvim'},           -- Optional
+		{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     -- Required
-			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-			{'hrsh7th/cmp-buffer'}, -- Optional
-			{'hrsh7th/cmp-path'}, -- Optional
-			{'hrsh7th/cmp-cmdline'}, -- Optional
-			{'hrsh7th/nvim-cmp'}, -- Optional
+		-- Autocompletion
+		{'hrsh7th/nvim-cmp'},     -- Required
+		{'hrsh7th/cmp-nvim-lsp'}, -- Required
+		{'hrsh7th/cmp-buffer'}, -- Optional
+		{'hrsh7th/cmp-path'}, -- Optional
+		{'hrsh7th/cmp-cmdline'}, -- Optional
+		{'hrsh7th/nvim-cmp'}, -- Optional
 
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},     -- Required
-			{'rafamadriz/friendly-snippets'}, -- Optional
-		}
+		-- Snippets
+		{'L3MON4D3/LuaSnip'},     -- Required
+		{'rafamadriz/friendly-snippets'}, -- Optional
+	}
 	},
 }
 
