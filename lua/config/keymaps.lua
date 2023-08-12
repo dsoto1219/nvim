@@ -25,17 +25,20 @@ vim.g.maplocalleader = " "
 local nvim_tree_status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not nvim_tree_status_ok then
 	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
+else
+	keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", opts)
 end
+
 
 -- Normal --
 -- easy :so 
 keymap("n", "<leader><leader>", ":source<CR>", {noremap = true, silent = false})
 
 -- Better window navigation
-keymap("n", "<leader>wh", "<C-w>h", opts)
-keymap("n", "<leader>wj", "<C-w>j", opts)
-keymap("n", "<leader>wk>", "<C-w>k", opts)
-keymap("n", "<leader>wl", "<C-w>l", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize window with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
