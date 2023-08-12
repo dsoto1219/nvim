@@ -20,10 +20,10 @@ local plugins = {
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 	"akinsho/bufferline.nvim",
+	"Shatur/neovim-ayu",
 
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{"nvim-treesitter/playground"},
-
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		  dependencies = { 'nvim-lua/plenary.nvim' }

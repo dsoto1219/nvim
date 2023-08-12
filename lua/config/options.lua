@@ -9,6 +9,8 @@ local options = {
 	cursorline = true,
 	number = true,
 	relativenumber = true,
+	autochdir = true;
+	ignorecase = true;
 
 	-- indentation
 	showtabline = 2,
@@ -22,6 +24,9 @@ local options = {
 for k,v in pairs(options) do
 	vim.opt[k] = v
 end
+
+-- turn off auto commenting
+vim.opt.formatoptions:remove{ "c", "r", "o" }
 
 -- default terminal is powershell
 if vim.fn.has('win32') == 1 then

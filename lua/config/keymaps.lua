@@ -1,6 +1,9 @@
-local opts = { noremap = true, silent = true }
+local which_key_status_ok, which_key = pcall(require, "which-key")
+if which_key_status_ok then
+	require("which-key")
+end
 
-local term_opts = {silent = true}
+local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -8,7 +11,7 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap leader key
 keymap("", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = " "
 
 -- Modes
 -- 	normal_mode = "n",
@@ -25,11 +28,14 @@ if not nvim_tree_status_ok then
 end
 
 -- Normal --
+-- easy :so 
+keymap("n", "<leader><leader>", ":source<CR>", {noremap = true, silent = false})
+
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<leader>wh", "<C-w>h", opts)
+keymap("n", "<leader>wj", "<C-w>j", opts)
+keymap("n", "<leader>wk>", "<C-w>k", opts)
+keymap("n", "<leader>wl", "<C-w>l", opts)
 
 -- Resize window with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -38,8 +44,8 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Nagivate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<C-Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-C-Tab>", ":bprevious<CR>", opts)
 
 -- Visual -- 
 -- Stay in indent mode
