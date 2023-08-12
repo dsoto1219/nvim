@@ -29,11 +29,6 @@ local plugins = {
 	  dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	  },
-	  config = function()
-		vim.g.loaded_netrwPlugin = 1
-		vim.g.loaded_netrw = 1
-		require("nvim-tree").setup {}
-	  end,
 	},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	{'nvim-lualine/lualine.nvim', dependencies = {"nvim-tree/nvim-web-devicons"}},

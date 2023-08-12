@@ -21,14 +21,11 @@ vim.g.maplocalleader = " "
 -- 	term_mode = "t",
 -- 	command_mode = "c"
 
--- netrw browse
-local nvim_tree_status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not nvim_tree_status_ok then
+-- netrw browse/nvim-tree browse
+netrw_disabled = vim.g.loaded_netrwPlugin and vim.g.loaded_netrw
+if not netrw_disabled then
 	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
-else
-	keymap("n", "<leader>pv", ":NvimTreeFocus<CR>", opts)
 end
-
 
 -- Normal --
 -- easy :so 
@@ -47,8 +44,8 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Nagivate buffers
-keymap("n", "<C-Tab>", ":bnext<CR>", opts)
-keymap("n", "<S-C-Tab>", ":bprevious<CR>", opts)
+keymap("n", "<S-L>", ":bnext<CR>", opts)
+keymap("n", "<S-H>", ":bprevious<CR>", opts)
 
 -- Visual -- 
 -- Stay in indent mode
