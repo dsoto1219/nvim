@@ -26,7 +26,7 @@ local nvim_tree_status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not nvim_tree_status_ok then
 	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
 else
-	keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", opts)
+	keymap("n", "<leader>pv", ":NvimTreeFocus<CR>", opts)
 end
 
 
