@@ -83,7 +83,8 @@ local plugins = {
 		{
 			'L3MON4D3/LuaSnip',
 			dependencies = {'rafamadriz/friendly-snippets'}, -- must put here for this to work
-		}
+		},
+		{'rafamadriz/friendly-snippets'},
 	},
 }
 
