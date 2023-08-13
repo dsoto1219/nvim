@@ -81,9 +81,10 @@ local plugins = {
 		{'hrsh7th/nvim-cmp'}, -- Optional
 
 		-- Snippets
-		{'L3MON4D3/LuaSnip'},     -- Required
-		{'rafamadriz/friendly-snippets'}, -- Optional
-	}
+		{
+			'L3MON4D3/LuaSnip',
+			dependencies = {'rafamadriz/friendly-snippets'}, -- must put here for this to work
+		}
 	},
 }
 
