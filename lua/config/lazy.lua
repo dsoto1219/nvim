@@ -66,7 +66,6 @@ local plugins = {
 		opts = {} -- this is equalent to setup({}) function
 	},
 	{
-	{
 		-- LSP Support
 		{'neovim/nvim-lspconfig'},             -- Required
 		{'williamboman/mason.nvim'},           -- Optional
