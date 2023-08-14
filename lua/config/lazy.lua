@@ -74,6 +74,7 @@ local plugins = {
 		-- Autocompletion
 		{'hrsh7th/nvim-cmp'},     -- Required
 		{'hrsh7th/cmp-nvim-lsp'}, -- Required
+		{'saadparwaiz1/cmp_luasnip'}, -- Required if you want luasnip
 		{'hrsh7th/cmp-buffer'}, -- Optional
 		{'hrsh7th/cmp-path'}, -- Optional
 		{'hrsh7th/cmp-cmdline'}, -- Optional
@@ -82,8 +83,13 @@ local plugins = {
 		-- Snippets
 		{
 			'L3MON4D3/LuaSnip',
+			-- follow latest release.
+			version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+			-- install jsregexp (optional!).
+			build = "make install_jsregexp",
 			dependencies = {'rafamadriz/friendly-snippets'}, -- must put here for this to work
-		}
+		},
+		{'rafamadriz/friendly-snippets'},
 	},
 }
 

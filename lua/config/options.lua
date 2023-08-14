@@ -16,6 +16,7 @@ local options = {
 	showtabline = 2,
 	smartindent = true,
 	autoindent = true,
+	scrolloff = 8,
 
 	-- misc
 	paste = false, --https://stackoverflow.com/a/13172741/18031673
