@@ -74,6 +74,7 @@ local plugins = {
 		-- Autocompletion
 		{'hrsh7th/nvim-cmp'},     -- Required
 		{'hrsh7th/cmp-nvim-lsp'}, -- Required
+		{'saadparwaiz1/cmp_luasnip'}, -- Required if you want luasnip
 		{'hrsh7th/cmp-buffer'}, -- Optional
 		{'hrsh7th/cmp-path'}, -- Optional
 		{'hrsh7th/cmp-cmdline'}, -- Optional
