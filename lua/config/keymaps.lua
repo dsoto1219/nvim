@@ -27,6 +27,9 @@ if not netrw_disabled then
 	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
 end
 
+-- easy save
+keymap("", "<C-s>", ":update<CR>", {noremap = true, silent = false})
+
 -- Normal --
 -- easy :so 
 keymap("n", "<leader><leader>", ":source<CR>", {noremap = true, silent = false})
@@ -36,6 +39,8 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-q>", "<C-w>q", opts)
+
 
 -- Resize window with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
