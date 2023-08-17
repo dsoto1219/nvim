@@ -21,18 +21,21 @@ vim.g.maplocalleader = " "
 -- 	term_mode = "t",
 -- 	command_mode = "c"
 
+-- easy save
+keymap("", "<C-s>", ":update<CR>", {noremap = true, silent = false})
+
+-- Normal --
 -- netrw browse/nvim-tree browse
 netrw_disabled = vim.g.loaded_netrwPlugin and vim.g.loaded_netrw
 if not netrw_disabled then
 	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
 end
 
--- easy save
-keymap("", "<C-s>", ":update<CR>", {noremap = true, silent = false})
-
--- Normal --
 -- easy :so 
 keymap("n", "<leader><leader>", ":source<CR>", {noremap = true, silent = false})
+
+-- edit .vimrc
+keymap("n", "<leader>vm", ":e $MYVIMRC<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

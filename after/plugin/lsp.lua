@@ -22,3 +22,13 @@ lspconfig[server_name].setup({
   capabilities = lsp_capabilities,
 })
 end
+
+lspconfig.lua_ls.setup{
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
+}

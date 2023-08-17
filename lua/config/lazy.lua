@@ -20,6 +20,7 @@ local plugins = {
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 	"navarasu/onedark.nvim",
+	"sevko/vim-nand2tetris-syntax",
 
 	{"nvim-tree/nvim-web-devicons"},
 	{
@@ -91,6 +92,15 @@ local plugins = {
 	},
 }
 
-local opts = {}
+local opts = {
+	install = {
+		colorscheme = { "onedark" }
+	},
+	ui = {
+		size = {width = 0.8, height = 0.725},
+		wrap = true,
+		border = "shadow"
+	}
+}
 
 require("lazy").setup(plugins, opts)
