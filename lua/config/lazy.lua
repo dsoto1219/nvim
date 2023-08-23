@@ -15,13 +15,33 @@ local plugins = {
 	-- misc plugins
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
-	"lervag/vimtex",
 	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 	"navarasu/onedark.nvim",
 	"sevko/vim-nand2tetris-syntax",
 
+	"lervag/vimtex",
+	{
+		"iurimateus/luasnip-latex-snippets.nvim",
+		-- vimtex isn't required if using treesitter
+		dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+		opts = { usetreesitter = true },
+		config = function(_, opts)
+		require'luasnip-latex-snippets'.setup(opts)
+		end,
+	},
+	  {
+	  'akinsho/toggleterm.nvim',
+	  version = "*",
+	  opts = {
+		  open_mapping = [[<c-\>]],
+	  },
+	  config = function (_, opts)
+		  require("toggleterm").setup(opts)
+	  end
+	},
+	{ 'dccsillag/magma-nvim', build = ':UpdateRemotePlugins' },
 	{"nvim-tree/nvim-web-devicons"},
 	{
 	  "nvim-tree/nvim-tree.lua",
