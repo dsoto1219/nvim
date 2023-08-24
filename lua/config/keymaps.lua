@@ -1,8 +1,3 @@
-local which_key_status_ok, which_key = pcall(require, "which-key")
-if which_key_status_ok then
-	require("which-key")
-end
-
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
@@ -23,6 +18,8 @@ vim.g.maplocalleader = " "
 
 -- easy save
 keymap("", "<C-s>", ":update<CR>", {noremap = true, silent = false})
+-- select all
+keymap("", "<C-a>", "<Esc>ggVG", {noremap = true, silent = false})
 
 -- Normal --
 -- netrw browse/nvim-tree browse
@@ -52,8 +49,8 @@ keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Nagivate buffers
-keymap("n", "<S-L>", ":bnext<CR>", opts)
-keymap("n", "<S-H>", ":bprevious<CR>", opts)
+keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 
 -- Visual -- 
 -- Stay in indent mode
@@ -72,11 +69,3 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- open terminal in terminal mode (all modes)
--- below current window
-keymap("n", "<C-\\>", ":belowright split | term<CR>i", opts)
-
--- mapping to go from terminal mode to terminal-normal mode
-keymap("t", "<Esc>", "<C-\\><C-n>", opts)

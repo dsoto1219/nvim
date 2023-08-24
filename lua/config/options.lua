@@ -29,11 +29,6 @@ end
 -- turn off auto commenting
 vim.opt.formatoptions:remove{ "c", "r", "o" }
 
--- default terminal is powershell
-if vim.fn.has('win32') == 1 then
-  vim.o.shell = 'pwsh.exe'
-end
-
 -- vim.cmd([[highlight Pmenu ctermbg=black guibg=black]])
 
 -- misc vim.cmd commands
