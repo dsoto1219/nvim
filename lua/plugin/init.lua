@@ -19,6 +19,7 @@ local plugins = {
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
 	"sevko/vim-nand2tetris-syntax",
+	"nathom/filetype.nvim",
 
 	{
 		"navarasu/onedark.nvim",
