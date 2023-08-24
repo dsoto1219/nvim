@@ -76,7 +76,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Terminal --
 -- open terminal in terminal mode (all modes)
 -- below current window
-keymap("n", "<Leader>t", ":belowright split | term<CR>i", opts)
+keymap("n", "<C-\\>", ":belowright split | term<CR>i", opts)
 
 -- mapping to go from terminal mode to terminal-normal mode
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
