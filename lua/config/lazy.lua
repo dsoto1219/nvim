@@ -15,12 +15,18 @@ local plugins = {
 	-- misc plugins
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
-	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
 	"tpope/vim-fugitive",
-	"navarasu/onedark.nvim",
 	"sevko/vim-nand2tetris-syntax",
 
+	{
+		"navarasu/onedark.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("onedark")
+		end
+	},
 	"lervag/vimtex",
 	{
 		"iurimateus/luasnip-latex-snippets.nvim",
@@ -28,7 +34,7 @@ local plugins = {
 		dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
 		opts = { usetreesitter = true },
 		config = function(_, opts)
-		require'luasnip-latex-snippets'.setup(opts)
+			require'luasnip-latex-snippets'.setup(opts)
 		end,
 	},
 	  {
@@ -51,8 +57,22 @@ local plugins = {
 		"nvim-tree/nvim-web-devicons",
 	  },
 	},
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-	{'nvim-lualine/lualine.nvim', dependencies = {"nvim-tree/nvim-web-devicons"}},
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function(_, opts)
+			require('bufferline').setup(opts)
+		end
+	},
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = {"nvim-tree/nvim-web-devicons"},
+		opts = { theme = "onedark" },
+		config = function(_, opts)
+			require('lualine').setup(opts)
+		end
+	},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{"nvim-treesitter/playground"},
 	{
