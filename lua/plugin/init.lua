@@ -23,7 +23,9 @@ local plugins = {
 		"navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
+		opts = { transparent = true },
+		config = function(_, opts)
+			require('onedark').setup(opts)
 			vim.cmd.colorscheme("onedark")
 		end
 	},
@@ -37,15 +39,10 @@ local plugins = {
 			require'luasnip-latex-snippets'.setup(opts)
 		end,
 	},
-	  {
+	{
 	  'akinsho/toggleterm.nvim',
 	  version = "*",
-	  opts = {
-		  open_mapping = [[<c-\>]],
-	  },
-	  config = function (_, opts)
-		  require("toggleterm").setup(opts)
-	  end
+	  config = true
 	},
 	{ 'dccsillag/magma-nvim', build = ':UpdateRemotePlugins' },
 	{"nvim-tree/nvim-web-devicons"},
@@ -86,11 +83,6 @@ local plugins = {
 	    vim.o.timeout = true
 	    vim.o.timeoutlen = 300
 	  end,
-	  opts = {
-	    -- your configuration comes here
-	    -- or leave it empty to use the default settings
-	    -- refer to the configuration section below
-	  }
 	},
 	{
 		"dstein64/vim-startuptime",
