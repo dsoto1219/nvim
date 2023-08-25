@@ -1,1 +1,1 @@
-leg g:vimtex_indent_ignored_envs = ['lstlisting']
+let g:vimtex_indent_ignored_envs = ['lstlisting']
