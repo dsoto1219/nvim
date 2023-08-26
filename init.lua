@@ -3,7 +3,6 @@
 	-- callback = function()
 	-- end,
 -- })
---
 
 require("config.autocmds")
 require("config.options")

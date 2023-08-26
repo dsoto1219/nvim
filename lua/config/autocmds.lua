@@ -9,3 +9,10 @@ vim.api.nvim_create_autocmd(
     {"VimEnter"},
     { pattern = "*", command = "cd " .. path_to_desktop, group = vim_enter_group }
 )
+
+vim.cmd([[
+	augroup autocommentsoff
+		autocmd!
+		autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+	augroup END
+]])
