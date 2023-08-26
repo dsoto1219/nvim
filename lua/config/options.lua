@@ -1,23 +1,26 @@
 local options = {
+	number = true,
+	relativenumber = true,
+
 	clipboard = "unnamedplus",
 	belloff = "all",
 	mouse = "a",
 	updatetime = 300,
-	shiftwidth = 4,
 	termguicolors = true, -- more color options
-	tabstop = 4,
 	cursorline = true,
-	number = true,
-	relativenumber = true,
+
 	autochdir = true;
 	ignorecase = true;
 	wrap = false,
+	scrolloff = 8,
+	paste = false, --https://stackoverflow.com/a/13172741/18031673
 
 	-- indentation
+	tabstop = 4,
+	shiftwidth = 4,
 	showtabline = 2,
 	smartindent = true,
 	autoindent = true,
-	scrolloff = 8,
 
 	-- misc
 	paste = false, --https://stackoverflow.com/a/13172741/18031673
