@@ -3,13 +3,6 @@ if not status_ok then
 	return
 end
 
-local powershell_options = {
-}
-
-for option, value in pairs(powershell_options) do
-  vim.opt[option] = value
-end
-
 toggleterm.setup({
 	size = 20,
 	open_mapping = [[<c-\>]],
