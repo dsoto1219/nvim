@@ -20,6 +20,7 @@ local plugins = {
 	"tpope/vim-fugitive",
 	"sevko/vim-nand2tetris-syntax",
 	"nathom/filetype.nvim",
+	"lervag/vimtex",
 
 	{
 		"navarasu/onedark.nvim",
@@ -30,16 +31,6 @@ local plugins = {
 			require('onedark').setup(opts)
 			vim.cmd.colorscheme("onedark")
 		end
-	},
-	"lervag/vimtex",
-	{
-		"iurimateus/luasnip-latex-snippets.nvim",
-		-- vimtex isn't required if using treesitter
-		dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-		opts = { usetreesitter = true },
-		config = function(_, opts)
-			require'luasnip-latex-snippets'.setup(opts)
-		end,
 	},
 	{
 	  'akinsho/toggleterm.nvim',
@@ -73,7 +64,6 @@ local plugins = {
 		end
 	},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-	{"nvim-treesitter/playground"},
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		  dependencies = { 'nvim-lua/plenary.nvim' }
