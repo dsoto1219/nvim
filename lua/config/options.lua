@@ -15,15 +15,15 @@ local options = {
 	scrolloff = 8,
 	paste = false, --https://stackoverflow.com/a/13172741/18031673
 
-	-- indentation
-	tabstop = 4,
+	-- https://www.reddit.com/r/vim/wiki/tabstop/
+	tabstop = 8,
+	softtabstop = 4,
 	shiftwidth = 4,
+	noexpandtab = true,
+	-- other indentation options
 	showtabline = 2,
-	smartindent = true,
 	autoindent = true,
-
-	-- misc
-	paste = false, --https://stackoverflow.com/a/13172741/18031673
+	smartindent = false, -- https://www.reddit.com/r/vim/wiki/vimrctips/#wiki_do_not_use_smartindent
 
 	-- turn powershell on, https://github.com/akinsho/toggleterm.nvim/wiki/Tips-and-Tricks#using-toggleterm-with-powershell
 	shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
