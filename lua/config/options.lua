@@ -19,7 +19,7 @@ local options = {
 	tabstop = 8,
 	softtabstop = 4,
 	shiftwidth = 4,
-	noexpandtab = true,
+	expandtab = false,
 	-- other indentation options
 	showtabline = 2,
 	autoindent = true,
