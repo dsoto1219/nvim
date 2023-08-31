@@ -43,31 +43,31 @@ return {
 	s({trig = "template", dscr="Basic Template"},
 	    fmta(
 	    [[
-	    \documentclass[a4paper]{article}
+		\documentclass[a4paper]{article}
 
-	    \usepackage[utf8]{inputenc}
-	    \usepackage[T1]{fontenc}
-	    \usepackage{textcomp}
-	    \usepackage[dutch]{babel}
-	    \usepackage{amsmath, amssymb}
+		\usepackage[utf8]{inputenc}
+		\usepackage[T1]{fontenc}
+		\usepackage{textcomp}
+		\usepackage[dutch]{babel}
+		\usepackage{amsmath, amssymb}
 
 
-	    % figure support
-	    \usepackage{import}
-	    \usepackage{xifthen}
-	    \pdfminorversion=7
-	    \usepackage{pdfpages}
-	    \usepackage{transparent}
-	    \newcommand{\incfig}[1]{%
-		    \def\svgwidth{\columnwidth}
-		    \import{./figures/}{#1.pdf_tex}
-	    }
+		% figure support
+		\usepackage{import}
+		\usepackage{xifthen}
+		\pdfminorversion=7
+		\usepackage{pdfpages}
+		\usepackage{transparent}
+		\newcommand{\incfig}[1]{%
+			\def\svgwidth{\columnwidth}
+			\import{./figures/}{#1.pdf_tex}
+		}
 
-	    \pdfsuppresswarningpagegroup=1
+		\pdfsuppresswarningpagegroup=1
 
-	    \begin{document}
-		<>
-	    \end{document}
+		\begin{document}
+		    <>
+		\end{document}
 	    ]],
 		    { i(1) }
 	    ),
@@ -224,12 +224,46 @@ return {
 	    {condition = line_begin}
 	),
 
-	s({trig="//", dscr="Fraction", wordTrig = false, snippetType="autosnippet"},
+	s({trig="//", dscr="Fraction", wordTrig=false, snippetType="autosnippet"},
 	     fmta("\\frac{<>}{<>}", { i(1), i(2) }),
 	     {condition = math}
 	),
 
-	s({trig="//", dscr="Fraction", wordTrig = false},
+	s({trig="/", dscr="Fraction", wordTrig=false},
 	     fmta("\\frac{<>}{<>}", { d(1, get_visual), i(2) })
 	),
+
+	-- regex fraction snippets go here
+
+	-- auto-subscript goes here
+
+	-- snippets in between this relating to sympy and mathematica, ignored for now
+
+	s({trig="==", dscr="equals", wordTrig=false, snippetType="autosnippet"},
+	    { t("&= "), i(1), t("\\\\") }
+	),
+
+	s({trig="!=", dscr="equals", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\neq") }
+	),
+
+	s({trig="ceil", dscr="ceil", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\left\\lceil <> \\right\\rceil", { i(1) }),
+	    {condition=math}
+	),
+
+	s({trig="floor", dscr="floor", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\left\\lfloor <> \\right\\rfloor", { i(1) }),
+	    {condition=math}
+	),
+
+
+	s({trig="pmat", dscr="pmat", wordTrig = false, snippetType="autosnippet"},
+	    fmta("\\begin{pmatrix} <> \\end{pmatrix}", { i(1) })
+	),
+
+	s({trig="bmat", dscr="bmat", wordTrig = false, snippetType="autosnippet"},
+	    fmta("\\begin{bmatrix} <> \\end{bmatrix}", { i(1) })
+	),
+
 }

@@ -1,3 +1,8 @@
+local status_ok, ls = pcall(require, "luasnip")
+if not status_ok then
+    return
+end
+
 require('luasnip').config.set_config({
   region_check_events = 'InsertEnter',
   delete_check_events = 'InsertLeave',
@@ -12,16 +17,16 @@ require('luasnip').config.set_config({
 require('luasnip.loaders.from_vscode').lazy_load({
 	exclude = { "tex" },
 })
-require('luasnip.loaders.from_lua').lazy_load({ paths = "./snippets" })
+require('luasnip.loaders.from_lua').lazy_load({ paths = "./lua/snippets" })
 
-vim.cmd([[
-	" Expand or jump in insert mode
-	imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+local opts = {remap = true, silent = true}
 
-	" Jump forward through tabstops in visual mode
-	smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+-- vim.keymap.set({"i"}, "<Tab>", function() ls.expand() end, opts)
+-- vim.keymap.set({"i", "s"}, "<Tab>", function() ls.jump( 1) end, opts)
+-- vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, opts)
 
-	" Jump backward through snippet tabstops with Shift-Tab
-	imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-	smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-]])
+-- vim.keymap.set({"i", "s"}, "<C-E>", function()
+	--if ls.choice_active() then
+		-- ls.change_choice(1)
+	-- end
+-- end, opts)

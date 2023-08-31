@@ -11,8 +11,12 @@
 --)
 
 vim.cmd([[
-	augroup autocommentsoff
-		autocmd!
-		autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-	augroup END
+    augroup AllFileTypeOptions
+	autocmd!
+	autocmd FileType * 
+	    \ setlocal formatoptions-=c formatoptions-=r formatoptions-=o |
+	    \ filetype plugin indent on | 
+	    \ syntax enable | 
+	    \ hi Visual guifg=White guibg=LightBlue gui=none
+    augroup END
 ]])

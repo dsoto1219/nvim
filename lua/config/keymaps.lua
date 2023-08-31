@@ -28,6 +28,27 @@ if not netrw_disabled then
 	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
 end
 
+-- toggle autocommenting 
+vim.keymap.set("n", "<leader>cm", function()
+    -- bo stands for buffer options: https://www.reddit.com/r/neovim/comments/mmhwgc/comment/gtrnwct/?utm_source=share&utm_medium=web2x&context=3
+    local bfo = vim.bo.formatoptions
+    local ofo = vim.opt.formatoptions
+
+    -- https://stackoverflow.com/a/10158547/18031673
+    if bfo:find("c") and bfo:find("r") and bfo:find("o") then
+	-- https://www.reddit.com/r/neovim/comments/mmhwgc/comment/hue7voe/?utm_source=share&utm_medium=web2x&context=3
+	ofo:remove("c")
+	ofo:remove("r")
+	ofo:remove("o")
+	print("Autocommenting off")
+    else
+	ofo:append("c")
+	ofo:append("r")
+	ofo:append("o")
+	print("Autocommenting on")
+    end
+end, opts)
+
 -- easy :so 
 keymap("n", "<leader><leader>", ":source<CR>", {noremap = true, silent = false})
 
