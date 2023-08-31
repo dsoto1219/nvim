@@ -225,17 +225,36 @@ return {
 	),
 
 	s({trig="//", dscr="Fraction", wordTrig=false, snippetType="autosnippet"},
-	     fmta("\\frac{<>}{<>}", { i(1), i(2) }),
-	     {condition = math}
+	    fmta("\\frac{<>}{<>}", { i(1), i(2) }),
+	    {condition = math}
 	),
 
 	s({trig="/", dscr="Fraction", wordTrig=false},
-	     fmta("\\frac{<>}{<>}", { d(1, get_visual), i(2) })
+	    fmta("\\frac{<>}{<>}", { d(1, get_visual), i(2) })
 	),
 
-	-- regex fraction snippets go here
+	-- regex fraction snippets go here (can't translate them yet)
 
 	-- auto-subscript goes here
+	s({trig="(%a)(%d)", dscr="auto subscript", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+	    fmta("<>_<>", 
+	    {
+		f( function(_, snip) return snip.captures[1] end),
+		f( function(_, snip) return snip.captures[2] end)
+	    }
+	    ),
+	    { condition=math }
+	),
+
+	s({trig="(%a)_(%d%d)", dscr="auto subscript2", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+	    fmta("<>_{<>}", 
+	    {
+		f( function(_, snip) return snip.captures[1] end),
+		f( function(_, snip) return snip.captures[2] end)
+	    }
+	    ),
+	    { condition=math }
+	),
 
 	-- snippets in between this relating to sympy and mathematica, ignored for now
 
@@ -258,12 +277,289 @@ return {
 	),
 
 
-	s({trig="pmat", dscr="pmat", wordTrig = false, snippetType="autosnippet"},
+	s({trig="pmat", dscr="pmat", wordTrig=false, snippetType="autosnippet"},
 	    fmta("\\begin{pmatrix} <> \\end{pmatrix}", { i(1) })
 	),
 
-	s({trig="bmat", dscr="bmat", wordTrig = false, snippetType="autosnippet"},
+	s({trig="bmat", dscr="bmat", wordTrig=false, snippetType="autosnippet"},
 	    fmta("\\begin{bmatrix} <> \\end{bmatrix}", { i(1) })
 	),
+
+	s({trig="()", dscr="left( right)", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\left( <> \\right) <>", { d(1, get_visual), i(0) }),
+	    { condition=math }
+	),
+
+	s({trig="lr", dscr="left( right)", wordTrig=false},
+	    fmta("\\left( <> \\right) <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="lr(", dscr="left( right)", wordTrig=false},
+	    fmta("\\left( <> \\right) <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="lr|", dscr="left| right|", wordTrig=false},
+	    fmta("\\left| <> \\right| <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="lr{", dscr="left{ right}", wordTrig=false},
+	    fmta("\\left\\{ <> \\right\\} <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="lrb", dscr="left{ right}", wordTrig=false},
+	    fmta("\\left\\{ <> \\right\\} <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="lr[", dscr="left[ right]", wordTrig=false},
+	    fmta("\\left[ <> \\right] <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="lra", dscr="leftangle rightangle>", wordTrig=false},
+	    fmta("\\left<< <> \\right>> <>", { d(1, get_visual), i(0) })
+	),
+
+	s({trig="conj", dscr="conjugate", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\overline{<>}<>", { i(1), i(0) }),
+	    { condition=math }
+	),
+
+	s({trig="sum", dscr="sum", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\sum_{n=<>}^{<>} <>",
+		{
+		    i(1, "1"),
+		    i(2, "\\infty"),
+		    i(3, "a_n z^n")
+		}
+	    )
+	),
+
+	s({trig="taylor", dscr="taylor", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\sum_{<>=<>}^{<>} <> (x-a)^<> <>",
+		{
+		    i(1, "k"),
+		    i(2, "0"),
+		    i(3, "\\infty"),
+		    i(4, "c_k", rep(1)),
+		    rep(1),
+		    i(0)
+		}
+	    )
+	),
+
+	s({trig="lim", dscr="limit", wordTrig=false},
+	    fmta("\\lim_{<> \\to <>}", {i(1, "n"), i(2, "\\infty")})
+	),
+
+	s({trig="limsup", dscr="limsup", wordTrig=false},
+	    fmta("\\limsup_{<> \\to <>}", {i(1, "n"), i(2, "\\infty")})
+	),
+
+	s({trig="prod", dscr="product", wordTrig=false},
+	    fmta("\\prod_{<>=<>}^{<>} <> <>", 
+		{
+		    i(1, "n"),
+		    i(2, "1"),
+		    i(3, "\\infty"),
+		    d(4, get_visual),
+		    i(0)
+		}
+	    )
+	),
+
+	s({trig="part", dscr="d/dx", wordTrig=false},
+	    fmta("\\frac{\\partial <>}{\\partial <>} <>", 
+		{
+		    i(1, "V"),
+		    i(2, "x"),
+		    i(0)
+		}
+	    )
+	),
+
+	s({trig="sq", dscr="\\sqrt{}", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\sqrt{<>} <>", { d(1, get_visual), i(0) }),
+	    { condition=math }
+	),
+
+	s({trig="sr", dscr="^2", wordTrig=true, snippetType="autosnippet"},
+	    { t("^2") },
+	    { condition=math }
+	),
+
+	s({trig="cb", dscr="^3", wordTrig=true, snippetType="autosnippet"},
+	    { t("^3") },
+	    { condition=math }
+	),
+
+	s({trig="td", dscr="to the ... power", wordTrig=true, snippetType="autosnippet"},
+	    fmta("^{<>}<>", { i(1), i(0)}),
+	    { condition=math }
+	),
+
+	s({trig="rd", dscr="to the ... power", wordTrig=true, snippetType="autosnippet"},
+	    fmta("^{<>}<>", { i(1), i(0)}),
+	    { condition=math }
+	),
+
+	s({trig="__", dscr="subscript", wordTrig=true, snippetType="autosnippet"},
+	    fmta("_{<>}<>", { i(1), i(0) })
+	),
+
+	s({trig="ooo", dscr="\\infty", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\infty") }
+	),
+
+	s({trig="rij", dscr="mij", wordTrig=true},
+	    fmta("(<>_<>)_{<>\\in<>}<>",
+		{
+		    i(1, "x"),
+		    i(2, "n"),
+		    rep(2),
+		    i(3, "\\N"),
+		    i(0)
+		}
+	    )
+	),
+
+	s({trig="<=", dscr="leq", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\le") }
+	),
+
+	s({trig=">=", dscr="geq", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\ge") }
+	),
+
+	s({trig="EE", dscr="geq", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\exists") },
+	    { condition=math }
+	),
+
+	s({trig="AA", dscr="forall", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\forall") },
+	    { condition=math }
+	),
+
+	s({trig="xnn", dscr="xn", wordTrig=true, snippetType="autosnippet"},
+	    { t("x_{n}") },
+	    { condition=math }
+	),
+
+	s({trig="ynn", dscr="yn", wordTrig=true, snippetType="autosnippet"},
+	    { t("y_{n}") },
+	    { condition=math }
+	),
+
+	s({trig="xii", dscr="xi", wordTrig=true, snippetType="autosnippet"},
+	    { t("x_{i}") },
+	    { condition=math }
+	),
+
+	s({trig="yii", dscr="yi", wordTrig=true, snippetType="autosnippet"},
+	    { t("y_{i}") },
+	    { condition=math }
+	),
+
+	s({trig="xjj", dscr="xn", wordTrig=true, snippetType="autosnippet"},
+	    { t("x_{j}") },
+	    { condition=math }
+	),
+
+	s({trig="yjj", dscr="yj", wordTrig=true, snippetType="autosnippet"},
+	    { t("y_{j}") },
+	    { condition=math }
+	),
+
+	s({trig="xp1", dscr="x", wordTrig=true, snippetType="autosnippet"},
+	    { t("x_{n+1}") },
+	    { condition=math }
+	),
+
+	s({trig="xmm", dscr="xm", wordTrig=true, snippetType="autosnippet"},
+	    { t("x_{m}") },
+	    { condition=math }
+	),
+
+	s({trig="R0+", dscr="R0+", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\R_0^+") }
+	),
+
+	s({trig="plot", dscr="plot", wordTrig=false},
+	    fmta([[
+		\begin{figure}[<>]
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin= <>, xmax= <>,
+					ymin= <>, ymax = <>,
+					axis lines = middle,
+				]
+					\addplot[domain=<>:<>, samples=<>]{<>};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{<>}
+			\label{<>}
+		\end{figure}
+	    ]],
+	    {
+		i(1),
+		i(2, "-10"),
+		i(3, "10"),
+		i(4, "-10"),
+		i(5, "10"),
+		rep(2), rep(3),
+		i(6, "100"),
+		i(7),
+		i(8),
+		rep(8)
+	    }
+	    )
+	),
+
+	-- I don't get this one
+	-- s({trig="nn", dscr="Tikz node", wordTrig=false},
+	--     fmta([[
+	-- 	\node[<>] ($1/[^0-9a-zA-z]//g)<>) <>{$<>$};
+	-- 	<>
+	--     ]],
+	--     {
+	-- 	i(5),
+	--
+	--     }
+	--     )
+	-- )
+
+	s({trig="mcal", dscr="mathcal", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\mathcal{<>}<>", { i(1), i(0) }),
+	    { condition=math }
+	),
+
+	s({trig="lll", dscr="l", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\ell") }
+	),
+
+	s({trig="nabl", dscr="nabla", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\nabla") },
+	    { condition=math }
+	),
+
+	s({trig="xx", dscr="cross", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\times"), },
+	    { condition=math }
+	),
+
+	s({trig="**", dscr="cdot", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\cdot"), },
+	    { condition=math }
+	),
+	
+	s({trig="norm", dscr="norm", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\|<>\\|<>", { i(1), i(0) }),
+	    { condition=math }
+	),
+
+	-- others, including snippets for elementary functions
+
+
+
 
 }

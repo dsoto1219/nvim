@@ -13,6 +13,7 @@ return  {
 	require("luasnip").config.set_config({
 	    history = true,
 	    enable_autosnippets = true,
+	    update_events = 'TextChanged, TextChangedI',
 	})
 	require("luasnip.loaders.from_lua").load({ paths = "./lua/snippets"})
     end,

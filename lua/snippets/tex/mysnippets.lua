@@ -25,6 +25,11 @@ return {
 	s({trig="bb", wordTrig=false},
 	     fmta("\\mathbb{<>}", { i(1) }),
 	     {condition=math}
+	),
+
+	-- attempt at replicating VSCode's auto-item
+	s({trig="\n", snippetType="autosnippet"},
+	    { t("\\item ") }
 	)
 
 }
