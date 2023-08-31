@@ -6,6 +6,16 @@ return {
 	config = function()
 	    -- Setup language servers.
 	    local lspconfig = require('lspconfig')
+	    lspconfig.lua_ls.setup {
+		settings = {
+		    Lua = {
+			diagnostics = {
+			    globals = { 'vim' }
+			}
+		    }
+		}
+	    }
+	    lspconfig.clangd.setup {}
 	    lspconfig.pyright.setup {}
 
 	    -- Global mappings.
