@@ -9,7 +9,7 @@ return {
 	end
     },
     -- "nathom/filetype.nvim",
-    { 
+    {
 	'lervag/vimtex',
 	ft = 'tex',
 	config = function()
@@ -20,13 +20,26 @@ return {
 	    ]])
 	end,
     },
+    {
+	'KeitaNakamura/tex-conceal.vim',
+	ft = 'tex',
+	config = function()
+	    vim.cmd([[
+		let g:tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
+		let g:tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
+
+		set conceallevel=2
+		let g:tex_conceal="abdgm"
+	    ]])
+	end
+    },
     -- "sevko/vim-nand2tetris-syntax",
     {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
 	init = function()
-	vim.o.timeout = true
-	vim.o.timeoutlen = 300
+	    vim.o.timeout = true
+	    vim.o.timeoutlen = 300
 	end,
     },
     {
