@@ -2,19 +2,17 @@ return {
     'akinsho/toggleterm.nvim',
     version = "*",
     opts = {
-	size = 20,
+	size = 15,
 	open_mapping = [[<c-\>]],
+	highlights = {
+	    Normal = {
+		guibg = "black",
+		ctermbg = "black"
+	    }
+	},
+	shading_factor = -100,
 	hide_numbers = true,
 	autochdir = true,
-	shade_terminals = true,
-	direction = "float",
-	float_opts = {
-	    border = "curved",
-	    winblend = 3,
-	    highlights = {
-		border = "Normal",
-		background = "Normal",
-	    }
-	}
+	direction = "horizontal",
     }
 }
