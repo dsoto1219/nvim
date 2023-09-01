@@ -551,15 +551,212 @@ return {
 	    { t("\\cdot"), },
 	    { condition=math }
 	),
-	
+
 	s({trig="norm", dscr="norm", wordTrig=true, snippetType="autosnippet"},
 	    fmta("\\|<>\\|<>", { i(1), i(0) }),
 	    { condition=math }
 	),
 
+	s({trig="dint", dscr="norm", worgTrig=false, snippetType="autosnippet"},
+	    fmta("\\int_{<>}^{<>} <> <>",
+	    {
+		i(1, "-\\infty"),
+		i(2, "\\infty"),
+		d(3, get_visual),
+		i(0)
+	    }),
+	    { condition=math }
+	),
+
 	-- others, including snippets for elementary functions
 
+	s({trig="->", dscr="to", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\to") },
+	    { context=math }
+	),
 
+	s({trig="<->", dscr="leftrightarrow", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\leftrightarrow") },
+	    { context=math }
+	),
 
+	s({trig="!>", dscr="mapsto", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\mapsto") },
+	    { context=math }
+	),
 
+	s({trig="invs", dscr="inverse", wordTrig=true, snippetType="autosnippet"},
+	    { t("^{-1}") },
+	    { context=math }
+	),
+
+	s({trig="compl", dscr="compliment", wordTrig=true, snippetType="autosnippet"},
+	    { t("^{c}") },
+	    { context=math }
+	),
+
+	s({trig="\\\\\\", dscr="setminus", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\setminus") },
+	    { context=math }
+	),
+
+	s({trig=">>", dscr=">>", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\gg") }
+	),
+
+	s({trig="<<", dscr="<<", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\ll") }
+	),
+
+	s({trig="~~", dscr="~", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\sim") }
+	),
+
+	s({trig="set", dscr="set", wordTrig=false, snippetType="autosnippet"},
+	    fmta("\\{<>\\} <>", { i(1), i(0) }),
+	    { context=math }
+	),
+
+	s({trig="||", dscr="mid", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\mid") }
+	),
+
+	s({trig="cc", dscr="subset", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\subset") },
+	    { context=math }
+	),
+
+	s({trig="notin", dscr="not in", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\not\\in") }
+	),
+
+	s({trig="inn", dscr="in", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\in") }
+	),
+
+	s({trig="NN", dscr="n", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\N") }
+	),
+
+	s({trig="Nn", dscr="cap", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\cap") }
+	),
+
+	s({trig="UU", dscr="cup", wordTrig=false, snippetType="autosnippet"},
+	    { t("\\cup") }
+	),
+
+	s({trig="uuu", dscr="bigcup", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\bigcup_{<> \\in <>} <>", {
+		i(1, "i"),
+		i(2, "I"),
+		i(0)
+	    })
+	),
+
+	s({trig="nnn", dscr="bigcap", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\bigcap_{<> \\in <>} <>", {
+		i(1, "i"),
+		i(2, "I"),
+		i(0)
+	    })
+	),
+
+	s({trig="OO", dscr="emptyset", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\O") }
+	),
+
+	s({trig="RR", dscr="real", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\R") }
+	),
+
+	s({trig="QQ", dscr="Q", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\Q") }
+	),
+
+	s({trig="ZZ", dscr="Z", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\Z") }
+	),
+
+	s({trig="<!", dscr="normal", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\triangleleft") }
+	),
+
+	s({trig="<>", dscr="hokje", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\diamond") }
+	),
+
+	-- can't translate regex yet for text subscript :(
+
+	s({trig="tt", dscr="text", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\text{<>}<>", { i(1), i(0) }),
+	    { condition=math }
+	),
+
+	s({trig="case", dscr="cases", wordTrig=false, snippetType="autosnippet"},
+	    fmta([[
+		\begin{cases}
+		    <>
+		\end{cases}
+	    ]], { i(1) }),
+	    { condition=math }
+	),
+
+	s({trig="SI", dscr="SI", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\SI{<>}<>", { i(1), i(2) })
+	),
+
+	s({trig="bigfun", dscr="Big function", wordTrig=true, snippetType="autosnippet"},
+	    fmta([[
+		\begin{align*}
+		    <>: <> &\longrightarrow <> \\
+		    <>: &\longrightarrow <>(<>) = <>
+		\end{align*}
+	    ]],
+	    {
+		i(1),
+		i(2),
+		i(3),
+		i(4),
+		rep(1),
+		rep(4),
+		i(0)
+	    })
+	),
+
+	s({trig="cvec", dscr="column vector", wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\begin{pmatrix} <>_<> \\\\ \\vdots\\\\ <>_<> \\end{pmatrix}",
+	    {
+		i(1, "x"), i(2, "1"),
+		rep(1), rep(2, "n")
+	    })
+	),
+
+	s({trig="bar", dscr="bar", regTrig=true, wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\overline{<>}<>", { i(1), i(0) })
+	),
+
+	s({trig="(%a)bar", dscr="bar", regTrig=true, wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\overline{<>}", { f(function(_, snip) return snip.captures[1] end) })
+	),
+
+	s({trig="hat", dscr="hat", regTrig=true, wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\hat{<>}<>", { i(1), i(0) })
+	),
+
+	s({trig="(%a)hat", dscr="hat", regTrig=true, wordTrig=true, snippetType="autosnippet"},
+	    fmta("\\hat{<>}", { f(function(_, snip) return snip.captures[1] end) })
+	),
+
+	s({trig="letw", dscr="let omega", wordTrig=true, snippetType="autosnippet"},
+	    { t("Let $\\Omega \\subset \\C$ be open.") }
+	),
+
+	s({trig="HH", dscr="H", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\mathbb{H}") }
+	),
+
+	s({trig="DD", dscr="D", wordTrig=true, snippetType="autosnippet"},
+	    { t("\\mathbb{D}") }
+	)
 }
