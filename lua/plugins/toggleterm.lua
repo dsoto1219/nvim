@@ -4,7 +4,7 @@ return {
     -- explicitly setup, as per documentation: https://github.com/akinsho/toggleterm.nvim#setup
     config = function()
 	require("toggleterm").setup{
-	    size = 10,
+	    size = 12,
 	    open_mapping = [[<C-\>]],
 	    autochdir = true,
 	    direction = "horizontal",
