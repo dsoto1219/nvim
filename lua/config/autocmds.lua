@@ -19,4 +19,9 @@ vim.cmd([[
 	    \ syntax enable | 
 	    \ hi Visual guifg=White guibg=LightBlue gui=none
     augroup END
+
+    augroup TexOptions
+	autocmd!
+	autocmd FileType tex setlocal wrap linebreak nolist
+    augroup END
 ]])
