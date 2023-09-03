@@ -4,7 +4,7 @@ return {
 	ft = 'tex',
 	config = function()
 	    vim.cmd([[
-		let g:vimtex_indent_ignored_envs = ['document', 'verbatim', 'lstlisting', 'frame']
+		" let g:vimtex_indent_ignored_envs = ['document', 'verbatim', 'lstlisting', 'frame']
 		setlocal indentexpr=
 	    ]])
 	end,
