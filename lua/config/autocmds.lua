@@ -19,4 +19,10 @@ vim.cmd([[
 	    \ syntax enable | 
 	    \ hi Visual guifg=White guibg=LightBlue gui=none
     augroup END
+    
+    augroup FileSpecific
+	autocmd!
+	autocmd FileType java setlocal ts=8 sts=8 expandtab
+	autocmd FileType tex set indentexpr=
+    augroup END
 ]])
