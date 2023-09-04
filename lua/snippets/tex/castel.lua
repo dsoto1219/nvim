@@ -401,7 +401,7 @@ return {
 	    { condition=math }
 	),
 
-	s({trig="__", dscr="subscript", wordTrig=true, snippetType="autosnippet"},
+	s({trig="__", dscr="subscript", wordTrig=false, snippetType="autosnippet"},
 	    fmta("_{<>}<>", { i(1), i(0) })
 	),
 

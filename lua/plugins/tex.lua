@@ -17,7 +17,7 @@ return {
 		let g:tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
 		let g:tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
 
-		set conceallevel=1
+		set conceallevel=0
 		let g:tex_conceal="abdmgs"
 	    ]])
 	end
