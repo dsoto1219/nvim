@@ -2,6 +2,18 @@ return {
     -- misc plugins
     "nvim-lua/popup.nvim",
     "nvim-lua/plenary.nvim",
+
+    {
+	"lukas-reineke/indent-blankline.nvim",
+	dependencies = { "nvim-treesitter/nvim-treesitter" },
+	opts = {
+	    show_first_indent_level = false,
+	},
+	config = function(_, opts)
+	    require("indent_blankline").setup(opts)
+	    vim.cmd("highlight IndentBlanklineChar guifg=gray gui=nocombine")
+	end
+    },
     {
 	"mbbill/undotree",
 	config = function()
