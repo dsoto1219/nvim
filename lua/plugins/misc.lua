@@ -39,10 +39,11 @@ return {
 		vim.g.startuptime_tries = 10
 	end,
     },
-    {
-	'windwp/nvim-autopairs',
-	event = "InsertEnter",
-	opts = {} -- this is equalent to setup({}) function
-    },
+ --    {
+	-- 'windwp/nvim-autopairs',
+	-- event = "InsertEnter",
+	-- opts = {} -- this is equalent to setup({}) function
+ --    },
+    { 'tpope/vim-surround' }
 }
 
