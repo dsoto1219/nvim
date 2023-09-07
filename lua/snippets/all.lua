@@ -10,19 +10,18 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return {
-	s(
-		{ -- Table 1: snippet parameters
-			trig = "sign",
-			dscr = "A snippet that signs Gilles Castel's name, in his honor.",
-			wordTrig = true,
-			regTrig = false,
-			priority = 100,
-			snippetType = "autosnippet"
-		},
-		{ -- Table 2: snippet nodes
-			t("Gilles Castel")
-		}
-		-- Table 3: advanced snippet options, left blank.
-	)
-
+    s(
+	{ -- Table 1: snippet parameters
+	    trig = "sign",
+	    dscr = "A snippet that signs Gilles Castel's name, in his honor.",
+	    wordTrig = true,
+	    regTrig = false,
+	    priority = 100,
+	    snippetType = "autosnippet"
+	},
+	{ -- Table 2: snippet nodes
+	    t("Gilles Castel")
+	}
+	-- Table 3: advanced snippet options, left blank.
+    )
 }
