@@ -20,11 +20,6 @@ return {
 	    -- completion rules
 	    local Rule = require('nvim-autopairs.rule')
 	    npairs.add_rules({
-		-- general
-	    	Rule("'", "'")
-		    :with_move(function(opts)
-			return opts.next_char == opts.char
-		    end),
 		-- multi-line commenting in c, c++, java
 	    	Rule("/*", "*/", {"c", "cc", "cpp", "cp", "java"}),
 		-- tex/latex
