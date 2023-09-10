@@ -83,7 +83,7 @@ return {
 	]],
 	{
 	  i(1),
-	  i(2),
+	  d(2, get_visual),
 	  rep(1),  -- this node repeats insert node i(1)
 	}
       ),
