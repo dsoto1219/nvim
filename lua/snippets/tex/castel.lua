@@ -333,13 +333,15 @@ return {
     ),
 
     s({trig="sum", dscr="sum", wordTrig=false, snippetType="autosnippet"},
-	fmta("\\sum_{n=<>}^{<>} <>",
+	fmta("\\sum_{<>=<>}^{<>} <>",
 	    {
-		i(1, "1"),
-		i(2, "\\infty"),
-		i(3, "a_n z^n")
+		i(1, "n"),
+		i(2, "1"),
+		i(3, "\\infty"),
+		i(4, "<exp>")
 	    }
-	)
+	),
+	{ condition=math }
     ),
 
     s({trig="taylor", dscr="taylor", wordTrig=false, snippetType="autosnippet"},

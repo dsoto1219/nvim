@@ -41,9 +41,13 @@ return {
 	{ t("\\item ") }
     ),
 
-    s({trig="bm", dscr="bold math", snippetType="autosnippet"},
-	fmta("\\bm{<>}<>", { d(1, get_visual), i(0) }),
-	{ condition=math }
+ --    s({trig="bm", dscr="bold math", snippetType="autosnippet"},
+	-- fmta("\\bm{<>}<>", { d(1, get_visual), i(0) }),
+	-- { condition=math }
+ --    )
+
+    s({trig="tbf", snippetType="autosnippet"},
+	fmta("\\textbf{<>}", { i(1) })
     )
 
 }
