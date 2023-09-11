@@ -28,7 +28,9 @@ return {
 			return opts.next_char == opts.char
 		    end),
 	    	Rule("\\[", "\\]", {"tex", "latex"}),
-	    	Rule("\\{", "\\}", {"tex", "latex"})
+	    	Rule("\\left\\[", "\\right\\]", {"tex", "latex"}),
+	    	Rule("\\{", "\\}", {"tex", "latex"}),
+	    	Rule("\\left\\{", "\\right\\}", {"tex", "latex"})
 	    })
 	end
     },

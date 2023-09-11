@@ -140,9 +140,9 @@ return {
     s({trig="enum", dscr="Enumerate", snippetType="autosnippet"},
 	fmta(
 	[[
-	    \begin{enumerate}
-		\item <>
-	    \end{enumerate}
+	\begin{enumerate}
+	    \item <>
+	\end{enumerate}
 	]],
 	{ i(1) }
 	),
@@ -152,9 +152,9 @@ return {
     s({trig="item", dscr="Itemize", snippetType="autosnippet"},
 	fmta(
 	[[
-	    \begin{itemize}
-		\item <>
-	    \end{itemize}
+	\begin{itemize}
+	    \item <>
+	\end{itemize}
 	]],
 	{ i(1) }
 	),
@@ -164,9 +164,9 @@ return {
     s({trig="desc", dscr="Description"},
 	fmta(
 	[[
-	    \begin{description}
-		\item[<>] <>
-	    \end{description}
+	\begin{description}
+	    \item[<>] <>
+	\end{description}
 	]],
 	{ i(1), i(2)}
 	),
@@ -569,11 +569,12 @@ return {
     ),
 
     s({trig="dint", dscr="norm", worgTrig=false, snippetType="autosnippet"},
-	fmta("\\int_{<>}^{<>} <> <>",
+	fmta("\\int_{<>}^{<>} <> \\mathrm{d}<> <>",
 	{
 	    i(1, "-\\infty"),
 	    i(2, "\\infty"),
 	    d(3, get_visual),
+	    i(4, "x"),
 	    i(0)
 	}),
 	{ condition=math }
