@@ -66,18 +66,33 @@ return {
 	fmta("\\textit{<>}", { d(1, get_visual) })
     ),
 
-    s({trig="RR", dscr="H", wordTrig=true, snippetType="autosnippet"},
+    s({trig="RR", dscr="R", wordTrig=true, snippetType="autosnippet"},
 	{ t("\\mathbb{R}") },
 	{ condition = math }
     ),
 
-    s({trig="CC", dscr="H", wordTrig=true, snippetType="autosnippet"},
+    s({trig="CC", dscr="C", wordTrig=true, snippetType="autosnippet"},
 	{ t("\\mathbb{C}") },
 	{ condition = math }
     ),
 
-    s({trig="FF", dscr="H", wordTrig=true, snippetType="autosnippet"},
+    s({trig="QQ", dscr="Q", wordTrig=true, snippetType="autosnippet"},
+	{ t("\\mathbb{Q}") },
+	{ condition = math }
+    ),
+
+    s({trig="FF", dscr="F", wordTrig=true, snippetType="autosnippet"},
 	{ t("\\mathbb{F}") },
+	{ condition = math }
+    ),
+
+    s({trig="ZZ", dscr="Z", wordTrig=true, snippetType="autosnippet"},
+	{ t("\\mathbb{Z}") },
+	{ condition = math }
+    ),
+
+    s({trig="NN", dscr="N", wordTrig=true, snippetType="autosnippet"},
+	{ t("\\mathbb{N}") },
 	{ condition = math }
     ),
 

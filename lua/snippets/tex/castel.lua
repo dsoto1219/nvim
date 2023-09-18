@@ -420,17 +420,17 @@ return {
 	{ t("\\infty") }
     ),
 
-    s({trig="rij", dscr="mij", wordTrig=true},
-	fmta("(<>_<>)_{<>\\in<>}<>",
-	    {
-		i(1, "x"),
-		i(2, "n"),
-		rep(2),
-		i(3, "\\N"),
-		i(0)
-	    }
-	)
-    ),
+ --    s({trig="rij", dscr="mij", wordTrig=true},
+	-- fmta("(<>_<>)_{<>\\in<>}<>",
+	--     {
+	-- 	i(1, "x"),
+	-- 	i(2, "n"),
+	-- 	rep(2),
+	-- 	i(3, "\\N"),
+	-- 	i(0)
+	--     }
+	-- )
+ --    ),
 
     s({trig="<=", dscr="leq", wordTrig=true, snippetType="autosnippet"},
 	{ t("\\le") }
@@ -646,9 +646,9 @@ return {
 	{ t("\\in") }
     ),
 
-    s({trig="NN", dscr="n", wordTrig=false, snippetType="autosnippet"},
-	{ t("\\N") }
-    ),
+ --    s({trig="NN", dscr="n", wordTrig=false, snippetType="autosnippet"},
+	-- { t("\\N") }
+ --    ),
 
     s({trig="Nn", dscr="cap", wordTrig=false, snippetType="autosnippet"},
 	{ t("\\cap") }
