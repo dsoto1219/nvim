@@ -29,6 +29,11 @@ return {
 		    end),
 	    	Rule("\\[", "\\]", {"tex", "latex"}),
 	    	Rule("\\left\\[", "\\right\\]", {"tex", "latex"}),
+	    	Rule("\\left[", "\\right]", {"tex", "latex"}),
+
+	    	Rule("\\left\\(", "\\right\\)", {"tex", "latex"}),
+	    	Rule("\\left(", "\\right)", {"tex", "latex"}),
+
 	    	Rule("\\{", "\\}", {"tex", "latex"}),
 	    	Rule("\\left\\{", "\\right\\}", {"tex", "latex"})
 	    })

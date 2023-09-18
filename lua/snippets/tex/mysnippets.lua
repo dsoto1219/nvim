@@ -54,12 +54,31 @@ return {
 	{ condition=math }
     ),
 
-    s({trig="tbf", snippetType="autosnippet"},
+    s({trig="tb", snippetType="autosnippet"},
 	fmta("\\textbf{<>}", { d(1, get_visual) })
+    ),
+
+    s({trig="tt", snippetType="autosnippet"},
+	fmta("\\text{<>}", { d(1, get_visual) })
     ),
 
     s({trig="tit", snippetType="autosnippet"},
 	fmta("\\textit{<>}", { d(1, get_visual) })
-    )
+    ),
+
+    s({trig="RR", dscr="H", wordTrig=true, snippetType="autosnippet"},
+	{ t("\\mathbb{R}") },
+	{ condition = math }
+    ),
+
+    s({trig="CC", dscr="H", wordTrig=true, snippetType="autosnippet"},
+	{ t("\\mathbb{C}") },
+	{ condition = math }
+    ),
+
+    s({trig="FF", dscr="H", wordTrig=true, snippetType="autosnippet"},
+	{ t("\\mathbb{F}") },
+	{ condition = math }
+    ),
 
 }
