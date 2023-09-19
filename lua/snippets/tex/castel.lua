@@ -490,9 +490,9 @@ return {
 	{ condition=math }
     ),
 
-    s({trig="R0+", dscr="R0+", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\R_0^+") }
-    ),
+ --    s({trig="R0+", dscr="R0+", wordTrig=true, snippetType="autosnippet"},
+	-- { t("\\R_0^+") }
+ --    ),
 
     s({trig="plot", dscr="plot", wordTrig=false},
 	fmta([[
@@ -674,21 +674,21 @@ return {
 	})
     ),
 
-    s({trig="OO", dscr="emptyset", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\O") }
-    ),
+ --    s({trig="OO", dscr="emptyset", wordTrig=true, snippetType="autosnippet"},
+	-- { t("\\O") }
+ --    ),
 
-    s({trig="RR", dscr="real", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\R") }
-    ),
-
-    s({trig="QQ", dscr="Q", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\Q") }
-    ),
-
-    s({trig="ZZ", dscr="Z", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\Z") }
-    ),
+ --    s({trig="RR", dscr="real", wordTrig=true, snippetType="autosnippet"},
+	-- { t("\\R") }
+ --    ),
+	--
+ --    s({trig="QQ", dscr="Q", wordTrig=true, snippetType="autosnippet"},
+	-- { t("\\Q") }
+ --    ),
+	--
+ --    s({trig="ZZ", dscr="Z", wordTrig=true, snippetType="autosnippet"},
+	-- { t("\\Z") }
+ --    ),
 
     s({trig="<!", dscr="normal", wordTrig=true, snippetType="autosnippet"},
 	{ t("\\triangleleft") }
@@ -766,11 +766,4 @@ return {
 	{ t("Let $\\Omega \\subset \\C$ be open.") }
     ),
 
-    s({trig="HH", dscr="H", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{H}") }
-    ),
-
-    s({trig="DD", dscr="D", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{D}") }
-    )
 }

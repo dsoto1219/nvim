@@ -54,46 +54,17 @@ return {
 	{ condition=math }
     ),
 
-    s({trig="tb", snippetType="autosnippet"},
-	fmta("\\textbf{<>}", { d(1, get_visual) })
-    ),
+ --    s({trig="tb", snippetType="autosnippet"},
+	-- fmta("\\textbf{<>}", { d(1, get_visual) })
+ --    ),
+	--
+ --    s({trig="tt", snippetType="autosnippet"},
+	-- fmta("\\text{<>}", { d(1, get_visual) })
+ --    ),
+	--
+ --    s({trig="tit", snippetType="autosnippet"},
+	-- fmta("\\textit{<>}", { d(1, get_visual) })
+ --    ),
 
-    s({trig="tt", snippetType="autosnippet"},
-	fmta("\\text{<>}", { d(1, get_visual) })
-    ),
-
-    s({trig="tit", snippetType="autosnippet"},
-	fmta("\\textit{<>}", { d(1, get_visual) })
-    ),
-
-    s({trig="RR", dscr="R", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{R}") },
-	{ condition = math }
-    ),
-
-    s({trig="CC", dscr="C", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{C}") },
-	{ condition = math }
-    ),
-
-    s({trig="QQ", dscr="Q", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{Q}") },
-	{ condition = math }
-    ),
-
-    s({trig="FF", dscr="F", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{F}") },
-	{ condition = math }
-    ),
-
-    s({trig="ZZ", dscr="Z", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{Z}") },
-	{ condition = math }
-    ),
-
-    s({trig="NN", dscr="N", wordTrig=true, snippetType="autosnippet"},
-	{ t("\\mathbb{N}") },
-	{ condition = math }
-    ),
 
 }
