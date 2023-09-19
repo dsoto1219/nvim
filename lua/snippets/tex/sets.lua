@@ -2,6 +2,10 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 
+local function math()
+    return vim.api.nvim_eval('vimtex#syntax#in_mathzone()') == 1
+end
+
 return {
     s({trig="RR", dscr="R", wordTrig=true, snippetType="autosnippet"},
 	{ t("\\mathbb{R}") },
