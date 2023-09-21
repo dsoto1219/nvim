@@ -744,23 +744,23 @@ return {
 	})
     ),
 
-    s({trig="bar", dscr="bar", regTrig=true, wordTrig=true, snippetType="autosnippet"},
-	fmta("\\overline{<>}<>", { i(1), i(0) })
-    ),
+ --    s({trig="bar", dscr="bar", regTrig=true, wordTrig=true, snippetType="autosnippet"},
+	-- fmta("\\overline{<>}<>", { i(1), i(0) })
+ --    ),
 
-    s({trig="(%a)bar", dscr="bar", regTrig=true, wordTrig=true, snippetType="autosnippet"},
-	fmta("\\overline{<>}", { f(function(_, snip) return snip.captures[1] end) })
-    ),
-
-    s({trig="hat", dscr="hat", regTrig=true, wordTrig=false, snippetType="autosnippet"},
-	fmta("\\hat{<>}<>", { i(1), i(0) }),
-	{ condition=math }
-    ),
-
-    s({trig="(%a)hat", dscr="hat", regTrig=true, wordTrig=false, snippetType="autosnippet"},
-	fmta("\\hat{<>}", { f(function(_, snip) return snip.captures[1] end) }),
-	{ condition=math }
-    ),
+ --    s({trig="(%a)bar", dscr="bar", regTrig=true, wordTrig=true, snippetType="autosnippet"},
+	-- fmta("\\overline{<>}", { f(function(_, snip) return snip.captures[1] end) })
+ --    ),
+	--
+ --    s({trig="hat", dscr="hat", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+	-- fmta("\\hat{<>}<>", { i(1), i(0) }),
+	-- { condition=math }
+ --    ),
+	--
+ --    s({trig="(%a)hat", dscr="hat", regTrig=true, wordTrig=false, snippetType="autosnippet"},
+	-- fmta("\\hat{<>}", { f(function(_, snip) return snip.captures[1] end) }),
+	-- { condition=math }
+ --    ),
 
     s({trig="letw", dscr="let omega", wordTrig=true, snippetType="autosnippet"},
 	{ t("Let $\\Omega \\subset \\C$ be open.") }
