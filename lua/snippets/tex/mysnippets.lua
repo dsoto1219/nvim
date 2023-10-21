@@ -28,10 +28,6 @@ return {
 	{ t("\\beta") }
     ),
 
-    s({trig=";g", snippetType="autosnippet"},
-	{ t("\\gamma") }
-    ),
-
     s({trig=";e", snippetType="autosnippet"},
 	{ t("\\epsilon") }
     ),
@@ -43,6 +39,16 @@ return {
     s({trig=";D", snippetType="autosnippet"},
 	{ t("\\Delta") }
     ),
+
+
+    s({trig=";g", snippetType="autosnippet"},
+	{ t("\\gamma") }
+    ),
+
+    s({trig=";l", snippetType="autosnippet"},
+	{ t("\\lambda") }
+    ),
+
 
     s({trig="bb", wordTrig=false, snippetType="autosnippet"},
 	 fmta("\\mathbb{<>}", { i(1) }),

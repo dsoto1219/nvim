@@ -707,9 +707,9 @@ return {
 
     s({trig="case", dscr="cases", wordTrig=false, snippetType="autosnippet"},
 	fmta([[
-	    \begin{cases}
-		<>
-	    \end{cases}
+	\begin{cases}
+	    <>
+	\end{cases}
 	]], { i(1) }),
 	{ condition=math }
     ),
