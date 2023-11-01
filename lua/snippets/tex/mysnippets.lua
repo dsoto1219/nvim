@@ -55,18 +55,36 @@ return {
 	 { condition=math }
     ),
 
-    s({trig="bm", dscr="bold math", snippetType="autosnippet"},
-	fmta("\\bm{<>}", { d(1, get_visual) }),
-	{ condition=math }
+    s({trig="vv", wordTrig=false, snippetType="autosnippet"},
+	 fmta("\\vec{<>}", { i(1) }),
+	 { condition=math }
     ),
+
+    s({trig="ip", wordTrig=false, snippetType="autosnippet"},
+	 fmta("\\langle <> \\rangle", { i(1) }),
+	 { condition=math }
+    ),
+
+    s({trig="nr", wordTrig=false, snippetType="autosnippet"},
+	 fmta("\\lVert <> \\rVert", { i(1) }),
+	 { condition=math }
+    ),
+
+
+ --    s({trig="bm", dscr="bold math", snippetType="autosnippet"},
+	-- fmta("\\bm{<>}", { d(1, get_visual) }),
+	-- { condition=math }
+ --    ),
 
  --    s({trig="tb", snippetType="autosnippet"},
 	-- fmta("\\textbf{<>}", { d(1, get_visual) })
  --    ),
 	--
+
  --    s({trig="tt", snippetType="autosnippet"},
 	-- fmta("\\text{<>}", { d(1, get_visual) })
  --    ),
+
 	--
  --    s({trig="tit", snippetType="autosnippet"},
 	-- fmta("\\textit{<>}", { d(1, get_visual) })

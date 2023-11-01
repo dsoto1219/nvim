@@ -3,14 +3,20 @@ return {
     version = "*",
     -- explicitly setup, as per documentation: https://github.com/akinsho/toggleterm.nvim#setup
     config = function()
+	local colors = require("tokyonight.colors").setup{}
+
 	require("toggleterm").setup{
 	    size = 12,
 	    open_mapping = [[<C-\>]],
 	    autochdir = true,
-	    direction = "horizontal",
-	    shade_terminal = true,
-	    shading_factor = -100,
 	    hide_numbers = true,
+	    direction = "horizontal",
+	    shade_terminal = false,
+	    highlights = {
+		Normal = {
+		    guibg = colors.bg_dark
+		}
+	    }
 	}
 
 	function _G.set_terminal_keymaps()

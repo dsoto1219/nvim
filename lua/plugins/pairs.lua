@@ -2,7 +2,6 @@ return {
     {
 	'windwp/nvim-autopairs',
 	event = "InsertEnter",
-	opts = {},
 	config = function()
 	    local npairs = require("nvim-autopairs")
 	    npairs.setup {}
@@ -19,6 +18,8 @@ return {
 
 	    -- completion rules
 	    local Rule = require('nvim-autopairs.rule')
+	    -- local cond = require('nvim-autopairs.conds')
+
 	    npairs.add_rules({
 		-- multi-line commenting in c, c++, java
 	    	Rule("/*", "*/", {"c", "cc", "cpp", "cp", "java"}),
@@ -27,13 +28,9 @@ return {
 		    :with_move(function(opts)
 			return opts.next_char == opts.char
 		    end),
-	    	Rule("\\[", "\\]", {"tex", "latex"}),
-	    	Rule("\\left\\[", "\\right\\]", {"tex", "latex"}),
-	    	Rule("\\left[", "\\right]", {"tex", "latex"}),
-
-	    	Rule("\\left\\(", "\\right\\)", {"tex", "latex"}),
 	    	Rule("\\left(", "\\right)", {"tex", "latex"}),
-
+	    	Rule("\\[", "\\]", {"tex", "latex"}),
+	    	Rule("\\left[", "\\right]", {"tex", "latex"}),
 	    	Rule("\\{", "\\}", {"tex", "latex"}),
 	    	Rule("\\left\\{", "\\right\\}", {"tex", "latex"})
 	    })

@@ -11,6 +11,7 @@ vim.cmd([[
     augroup FileSpecific
 	autocmd!
 	autocmd FileType java setlocal ts=8 sts=8 expandtab
+	autocmd FileType haskell setlocal ts=2 sts=2 expandtab
 	autocmd FileType tex setlocal wrap linebreak nolist indentexpr=
     augroup END
 

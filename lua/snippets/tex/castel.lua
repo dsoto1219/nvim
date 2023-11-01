@@ -285,10 +285,10 @@ return {
 	fmta("\\begin{bmatrix} <> \\end{bmatrix}", { i(1) })
     ),
 
-    s({trig="()", dscr="left( right)", wordTrig=false, snippetType="autosnippet"},
-	fmta("\\left( <> \\right) <>", { d(1, get_visual), i(0) }),
-	{ condition=math }
-    ),
+ --    s({trig="()", dscr="left( right)", wordTrig=false, snippetType="autosnippet"},
+	-- fmta("\\left( <> \\right) <>", { d(1, get_visual), i(0) }),
+	-- { condition=math }
+ --    ),
 
     s({trig="lr", dscr="left( right)", wordTrig=false},
 	fmta("\\left( <> \\right) <>", { d(1, get_visual), i(0) })
@@ -638,27 +638,28 @@ return {
 	{ condition=math }
     ),
 
-    s({trig="notin", dscr="not in", wordTrig=false, snippetType="autosnippet"},
-	{ t("\\not\\in") }
-    ),
-
-    s({trig="inn", dscr="in", wordTrig=false, snippetType="autosnippet"},
-	{ t("\\in") }
-    ),
+ --    s({trig="notin", dscr="not in", wordTrig=false, snippetType="autosnippet"},
+	-- { t("\\not\\in") }
+ --    ),
+	--
+ --    s({trig="inn", dscr="in", wordTrig=false, snippetType="autosnippet"},
+	-- { t("\\in") }
+ --    ),
 
  --    s({trig="NN", dscr="n", wordTrig=false, snippetType="autosnippet"},
 	-- { t("\\N") }
  --    ),
 
     s({trig="Nn", dscr="cap", wordTrig=false, snippetType="autosnippet"},
-	{ t("\\cap") }
+	{ t("\\cap") },
+	{ condition=math }
     ),
 
-    s({trig="UU", dscr="cup", wordTrig=false, snippetType="autosnippet"},
-	{ t("\\cup") }
-    ),
+ --    s({trig="UU", dscr="cup", wordTrig=false, snippetType="autosnippet"},
+	-- { t("\\cup") }
+ --    ),
 
-    s({trig="uuu", dscr="bigcup", wordTrig=true, snippetType="autosnippet"},
+    s({trig="UU", dscr="bigcup", wordTrig=true, snippetType="autosnippet"},
 	fmta("\\bigcup_{<> \\in <>} <>", {
 	    i(1, "i"),
 	    i(2, "I"),
@@ -666,7 +667,7 @@ return {
 	})
     ),
 
-    s({trig="nnn", dscr="bigcap", wordTrig=true, snippetType="autosnippet"},
+    s({trig="NN", dscr="bigcap", wordTrig=true, snippetType="autosnippet"},
 	fmta("\\bigcap_{<> \\in <>} <>", {
 	    i(1, "i"),
 	    i(2, "I"),

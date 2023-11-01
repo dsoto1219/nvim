@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap leader key
-keymap("", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
+keymap("n", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -15,11 +15,6 @@ vim.g.maplocalleader = " "
 -- 	visual_block_mode = "x"
 -- 	term_mode = "t",
 -- 	command_mode = "c"
-
--- easy save
-keymap("", "<C-s>", ":update<CR>", {noremap = true, silent = false})
--- select all
-keymap("", "<C-a>", "<Esc>ggVG", {noremap = true, silent = false})
 
 -- Normal --
 -- netrw browse/nvim-tree browse
@@ -49,9 +44,6 @@ vim.keymap.set("n", "<leader>cm", function()
     end
 end, opts)
 
--- easy :so 
-keymap("n", "<leader><leader>", ":source<CR>", {noremap = true, silent = false})
-
 -- edit .vimrc
 keymap("n", "<leader>vm", ":e $MYVIMRC<CR>", opts)
 
@@ -60,7 +52,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-q>", "<C-w>q", opts)
 
 -- Easy :noh
 keymap("n", "<leader>n", ":noh<CR>", opts)
