@@ -18,9 +18,9 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- netrw browse/nvim-tree browse
-netrw_disabled = vim.g.loaded_netrwPlugin and vim.g.loaded_netrw
+local netrw_disabled = vim.g.loaded_netrwPlugin and vim.g.loaded_netrw
 if not netrw_disabled then
-	keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
+    keymap("n", "<leader>pv", ":Lex 30<CR>", opts)
 end
 
 -- toggle autocommenting 
@@ -57,15 +57,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>n", ":noh<CR>", opts)
 
 -- Resize window with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
-
--- Nagivate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
--- Delete buffer
 
 -- Visual -- 
 -- Stay in indent mode
@@ -84,3 +79,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Select Mode --
+keymap("s", "p", "<BS>ap", opts)

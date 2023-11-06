@@ -1,15 +1,14 @@
 return {
     {
-	"folke/tokyonight.nvim",
+	'navarasu/onedark.nvim',
 	lazy = false,
 	priority = 1000,
-	opts = {
-	    transparent = true,
-	    sidebars = { "qf", "terminal" },
-	},
-	config = function(_, opts)
-	    require('tokyonight').setup(opts)
-	    vim.cmd.colorscheme('tokyonight')
+	config = function()
+	    local onedark = require('onedark')
+	    onedark.setup{
+		style = "warmer"
+	    }
+	    onedark.load()
 	end
     },
     {
@@ -30,11 +29,11 @@ return {
 	    "SmiteshP/nvim-navic",
 	    "nvim-tree/nvim-web-devicons", -- optional dependency
 	},
-	    opts = { theme = 'tokyonight' },
+	    opts = { theme = 'onedark' },
     },
     {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	opts = { theme = "tokyonight" },
+	opts = { theme = "onedark" },
     },
 }

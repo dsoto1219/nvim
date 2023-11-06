@@ -17,6 +17,6 @@ vim.cmd([[
 
     augroup TexComments
 	autocmd!
-	au BufRead,BufNewFile *.tex set comments+=b:\\item 
+	autocmd BufRead,BufNewFile *.tex set comments+=b:\\item 
     augroup END
 ]])

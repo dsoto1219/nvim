@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
     install = {
-	colorscheme = { "tokyonight" }
+	colorscheme = { "onedark" }
     },
     ui = {
 	size = {width = 0.8, height = 0.725},
