@@ -80,6 +80,7 @@ return {
     {
 	'williamboman/mason.nvim',
 	cmd = "Mason",
+	event = { "BufReadPre", "BufNewFile" },
 	keys = { { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" } },
 	build = ":MasonUpdate",
 	opts = {
@@ -93,6 +94,7 @@ return {
     },
     {
 	'williamboman/mason-lspconfig.nvim',
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 	    'williamboman/mason.nvim',
 	    'neovim/nvim-lspconfig',
