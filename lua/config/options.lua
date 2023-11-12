@@ -4,11 +4,11 @@ function set_options(table)
     end
 end
 
+-- General Options
 local options = {
     number = true,
     relativenumber = true,
 
-    clipboard = "unnamedplus",
     belloff = "all",
     mouse = "a",
     updatetime = 300,
@@ -35,7 +35,11 @@ local options = {
 
 set_options(options)
 
-if vim.loop.os_uname().sysname == "Windows" then
+
+local operating_system = vim.loop.os_uname().sysname
+-- Windows options
+if operating_system == "Windows" then
+
     local powershell_options = {
 	-- turn powershell on, https://github.com/akinsho/toggleterm.nvim/wiki/Tips-and-Tricks#using-toggleterm-with-powershell
 	shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
@@ -44,7 +48,27 @@ if vim.loop.os_uname().sysname == "Windows" then
 	shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
 	shellquote = "",
 	shellxquote = "",
+
     }
     set_options(powershell_options)
 end
 
+-- for faster startuptime, we tell vim which clipboard to use so it doesn't have to find it at startuptime:
+if vim.fn.has("Windows") then
+    -- from https://github.com/neovim/neovim/issues/9570#issuecomment-1503748366
+    vim.g.clipboard = {
+      name = 'win32yank',
+      copy = {
+	 ["+"] = 'win32yank.exe -i --crlf',
+	 ["*"] = 'win32yank.exe -i --crlf',
+       },
+      paste = {
+	 ["+"] = 'win32yank.exe -o --lf',
+	 ["*"] = 'win32yank.exe -o --lf',
+      },
+      cache_enabled = 0,
+    }
+end
+
+-- cross-platform clipboard option (from https://stackoverflow.com/a/30691754/18031673)
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' } 

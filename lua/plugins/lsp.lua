@@ -4,20 +4,6 @@ return {
 	'neovim/nvim-lspconfig', -- Required
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-	    -- Setup language servers.
-	    local lspconfig = require('lspconfig')
-	    lspconfig.lua_ls.setup {
-		settings = {
-		    Lua = {
-			diagnostics = {
-			    globals = { 'vim' }
-			}
-		    }
-		}
-	    }
-	    lspconfig.clangd.setup {}
-	    -- lspconfig.pyright.setup {}
-
 	    -- Global mappings.
 	    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 	    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -114,9 +100,7 @@ return {
 		    require("lspconfig").lua_ls.setup {
 			settings = {
 			    Lua = {
-				diagnostics = {
-				    globals = { 'vim' }
-				}
+				diagnostics = { globals = { 'vim' } }
 			    }
 			}
 		    }

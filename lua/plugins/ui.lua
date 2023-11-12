@@ -11,16 +11,16 @@ return {
 	    onedark.load()
 	end
     },
-    {
-	'akinsho/bufferline.nvim',
-	version = "*",
-	dependencies = 'nvim-tree/nvim-web-devicons',
-	opts = {
-	    options = {
-		mode = "tabs",
-	    }
-	}
-    },
+ --    {
+	-- 'akinsho/bufferline.nvim',
+	-- version = "*",
+	-- dependencies = 'nvim-tree/nvim-web-devicons',
+	-- opts = {
+	--     options = {
+	-- 	mode = "tabs",
+	--     }
+	-- }
+ --    },
     {
 	"utilyre/barbecue.nvim",
 	name = "barbecue",
