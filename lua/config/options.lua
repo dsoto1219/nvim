@@ -27,10 +27,8 @@ local options = {
     shiftwidth = 4,
     expandtab = false,
     -- other indentation options
-    showtabline = 2,
     autoindent = true,
     smartindent = false, -- https://www.reddit.com/r/vim/wiki/vimrctips/#wiki_do_not_use_smartindent
-
 }
 
 set_options(options)
@@ -38,7 +36,7 @@ set_options(options)
 
 local operating_system = vim.loop.os_uname().sysname
 -- Windows options
-if operating_system == "Windows" then
+if operating_system == "Windows_NT" then
 
     local powershell_options = {
 	-- turn powershell on, https://github.com/akinsho/toggleterm.nvim/wiki/Tips-and-Tricks#using-toggleterm-with-powershell
