@@ -1,22 +1,25 @@
 vim.cmd([[
-    augroup AllFileTypeOptions
-	autocmd!
-	autocmd FileType * 
-	    \ setlocal formatoptions-=c formatoptions-=r formatoptions-=o |
-	    \ filetype plugin indent on | 
-	    \ syntax enable | 
-	    \ hi Visual guifg=White guibg=LightBlue gui=none
-    augroup END
+  augroup AllFileTypes
+    autocmd!
+    autocmd FileType * 
+      \ setlocal formatoptions-=c formatoptions-=r formatoptions-=o |
+      \ filetype plugin indent on | 
+      \ syntax enable | 
+      \ hi Visual guifg=White guibg=LightBlue gui=none
+  augroup END
 
-    augroup FileSpecific
-	autocmd!
-	autocmd FileType java setlocal ts=8 sts=8 expandtab
-	autocmd FileType haskell setlocal ts=2 sts=2 expandtab
-	autocmd FileType tex setlocal wrap linebreak nolist indentexpr=
-    augroup END
+  augroup FileTypeTabsize
+    autocmd!
+    autocmd FileType java setlocal tabstop=8 softtabstop=8 expandtab
+    autocmd FileType haskell,lua,html,css,js setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab
+  augroup END
 
-    augroup TexComments
-	autocmd!
-	autocmd BufRead,BufNewFile *.tex set comments+=b:\\item 
-    augroup END
+  augroup Tex
+    autocmd!
+    autocmd FileType tex 
+      \ setlocal wrap linebreak nolist indentexpr=|
+      \ set formatoptions=tcroqln |
+      \ set comments+=b:\\item
+    autocmd BufRead,BufNewFile *.tex inoremap <expr> <CR> getline('.') =~ '\item $' ? '<c-w><c-w>' : '<CR>'
+  augroup END
 ]])
