@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 -- Remap leader key
 keymap("n", "<Space>", "<Nop>", opts) -- initializes space key so that it does nothing in all modes
@@ -48,10 +48,10 @@ end, opts)
 keymap("n", "<leader>vm", ":e $MYVIMRC<CR>", opts)
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", ":wincmd h<CR>", opts)
+keymap("n", "<C-j>", ":wincmd j<CR>", opts)
+keymap("n", "<C-k>", ":wincmd k<CR>", opts)
+keymap("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Easy :noh
 keymap("n", "<leader>n", ":noh<CR>", opts)
@@ -81,4 +81,4 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Select Mode --
-keymap("s", "p", "<BS>ap", opts)
+keymap("s", "p", "a<BS>p", opts)
