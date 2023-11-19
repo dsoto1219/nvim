@@ -1,17 +1,17 @@
 return {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = {
-	"nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-	vim.g.loaded_netrwPlugin = 1
-	vim.g.loaded_netrw = 1
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    vim.g.loaded_netrwPlugin = 1
+    vim.g.loaded_netrw = 1
 
-	require("nvim-tree").setup()
+    require("nvim-tree").setup()
 
-	local opts = {noremap = true, silent = true}
-	vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle<CR>", opts)
-    end
+    local opts = {noremap = true, silent = true}
+    vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle<CR>", opts)
+  end
 }
