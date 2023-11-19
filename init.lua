@@ -1,3 +1,5 @@
+OS = vim.loop.os_uname().sysname
+
 require("config")
 
 -- bootstrap lazy.nvim
