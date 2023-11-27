@@ -22,7 +22,7 @@ local options = {
   paste = false, --https://stackoverflow.com/a/13172741/18031673
 
   -- :help tabstop
-  tabstop = 8,
+  tabstop = 4,
   softtabstop = 4,
   shiftwidth = 4,
   expandtab = false,
