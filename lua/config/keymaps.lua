@@ -56,6 +56,10 @@ keymap("n", "<C-l>", ":wincmd l<CR>", opts)
 -- Easy :noh
 keymap("n", "<leader>n", ":noh<CR>", opts)
 
+-- Buffer Navigation
+keymap("n", "<S-l>", ":bnext", opts)
+keymap("n", "<S-h>", ":bnext", opts)
+
 -- Resize window with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
