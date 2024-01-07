@@ -84,6 +84,7 @@ return {
                   }
                 },
                 telemetry = { enable = false },
+                diagnostics = { globals = { "love" } }
               }
             }
           }
