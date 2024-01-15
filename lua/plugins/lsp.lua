@@ -80,12 +80,12 @@ return {
                 workspace = {
                   checkThirdParty = false,
                   library = {
-                    vim.env.VIMRUNTIME
-                  }
+                    -- "${3rd}/love2d/library",
+                  },
                 },
                 telemetry = { enable = false },
-                diagnostics = { globals = { "love" } }
-              }
+                diagnostics = { globals = { "vim" }}
+              },
             }
           }
         end
