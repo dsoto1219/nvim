@@ -237,7 +237,7 @@ return {
 
     -- auto-subscript goes here
     s({trig="(%a)(%d)", dscr="auto subscript", regTrig=true, wordTrig=false, snippetType="autosnippet"},
-	fmta("<>_<>", 
+	fmta("<>_<>",
 	{
 	    f( function(_, snip) return snip.captures[1] end),
 	    f( function(_, snip) return snip.captures[2] end)
@@ -247,7 +247,7 @@ return {
     ),
 
     s({trig="(%a)_(%d%d)", dscr="auto subscript2", regTrig=true, wordTrig=false, snippetType="autosnippet"},
-	fmta("<>_{<>}", 
+	fmta("<>_{<>}",
 	{
 	    f( function(_, snip) return snip.captures[1] end),
 	    f( function(_, snip) return snip.captures[2] end)
